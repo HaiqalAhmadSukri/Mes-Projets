@@ -1,0 +1,96 @@
+
+#include <iostream>
+using namespace std;
+
+void pairimpair1(int kek);
+void pairimpair2(int kek);
+
+int main()
+{
+ int mana, n;
+ do
+ {
+ cout << " **************************************" << endl;
+ cout << " * Somme des nombres pairs et impairs *" << '\n';
+ cout << " **************************************" << '\n' << '\n';
+
+ cout << "Somme des nombres pairs et impairs de 1 a n" << '\n';
+ cout << " s:Somme de tous les nombre de 1 a n" << '\n';
+ cout << " sp: Somme des nombres pairs" << '\n';
+ cout << " simp: Somme des nombres impairs" << '\n' << '\n';
+
+ cout << "1-Calcul de s, sp et simp par boucle" << '\n';
+ cout << "2-Calcul de s, sp et simp par formules" << '\n';
+ cout << "3-Fin du programme" << '\n' << '\n';
+ cout << "Votre choix : ";
+ cin >> mana;
+ 
+ switch(mana)
+  {
+ 	case 1:
+ 		cout<< "Entrez un valeur de n"<<'\n';
+ 		cin>>n;
+ 		pairimpair1(n);
+ 	
+ 		break;
+ 		
+ 	case 2:
+ 		cout<< "Entrez un valeur de n"<<'\n';
+ 		cin>>n;
+ 		pairimpair2(n);
+ 		break;
+ 		
+ 	case 3:
+ 		break;
+ 		
+ 	default:
+ 		cout<< "MAUVAIS CHOIX! ETES VOUS STUPIDE?!"<<'\n';
+ 		break;
+   }
+ }while(mana!=3);
+}
+
+void pairimpair2(int kek)
+{
+ int somme,pair,impair;
+
+ somme= (kek* (kek + 1)) / 2;
+ pair = (kek / 2) * ((kek / 2) + 1);
+ impair = somme-pair;
+
+ cout << "s = " << somme<< "      sp = " << pair;
+ cout << "  simp = " << impair << '\n' << '\n';
+}
+
+void pairimpair1(int kek)
+{
+	int somme,pair,impair;
+	somme=0;
+	pair=0;
+	impair=0;
+	
+	while(kek>0)
+	{
+		int lol;
+		
+		lol=kek%2;
+		
+		
+		somme = somme + kek;
+		if(lol>0)
+		{
+				impair = impair + kek;
+				
+		}
+		else
+		{
+				pair= pair + kek;
+						
+		}
+		
+		kek--;
+		 
+	}
+	cout << "s = " << somme<< "      sp = " << pair;
+	cout << "  simp = " << impair << '\n' << '\n';
+}
